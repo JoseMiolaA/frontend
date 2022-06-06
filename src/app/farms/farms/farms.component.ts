@@ -1,5 +1,7 @@
+import { FarmsService } from './../service/farms.service';
 import { Farm } from './../model/farm';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-farms',
@@ -8,12 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmsComponent implements OnInit {
 
-  farms: Farm[] = [
-    {id: 'id', name: 'Fazenda dos Guri', area: 22,production: 123.3, productivity: 10.12}
-  ];
-  displayedColumns = ['name', 'area', 'production', 'productivity']
+  farms: Observable<Farm[]>;
+  displayedColumns = ['name', 'area', 'totalProduction', 'productivity']
 
-  constructor() { }
+  constructor(private farmsService: FarmsService) {
+    this.farms = this.farmsService.list();
+
+   }
 
   ngOnInit(): void {
   }
