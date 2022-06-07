@@ -12,7 +12,10 @@ export class FarmsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  list(){
+  getAll(){
     return this.httpClient.get<Farm[]>(this.API);
+  }
+  post(farm: Farm){
+    return this.httpClient.post<Farm>(this.API, farm);
   }
 }
