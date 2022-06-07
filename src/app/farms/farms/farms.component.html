@@ -41,7 +41,7 @@
 
       <mat-cell *matCellDef="let farm">
         <button mat-icon-button aria-label="Edit Farm">
-          <mat-icon (click) = "onEdit()">edit</mat-icon>
+          <mat-icon (click) = "onEdit(farm)">edit</mat-icon>
         </button>
         <button mat-icon-button aria-label="Delete Farm">
           <mat-icon (click) = "onDelete(farm)">delete</mat-icon>

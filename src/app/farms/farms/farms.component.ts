@@ -1,3 +1,4 @@
+import { FarmEditFormComponent } from './../farm-edit-form/farm-edit-form.component';
 import { FarmFormComponent } from './../farm-form/farm-form.component';
 import { FarmsService } from './../service/farms.service';
 import { Farm } from './../model/farm';
@@ -40,11 +41,14 @@ export class FarmsComponent implements OnInit {
     const dialogRef = this.dialog.open(FarmFormComponent, {
       width: '250px'
     });
-    dialogRef.afterClosed().subscribe(farm => {});
+    dialogRef.afterClosed().subscribe(farm => {console.log(farm)});
   }
-  onEdit(){
-    console.log('onEdit');
-  }
+  onEdit(farm:Farm){
+    const dialogRef = this.dialog.open(FarmEditFormComponent, {
+      width: '250px',
+      data: farm
+    });
+    dialogRef.afterClosed().subscribe(farm => {console.log(farm)});  }
 
   onFoward(){
     console.log('onCreate');

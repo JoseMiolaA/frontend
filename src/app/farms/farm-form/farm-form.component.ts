@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./farm-form.component.css']
 })
 export class FarmFormComponent implements OnInit {
+
   public farmForm: FormGroup;
 
   constructor(
@@ -20,7 +21,6 @@ export class FarmFormComponent implements OnInit {
     this.farmForm = this.fb.group({
       name:[null]
     });
-
   }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class FarmFormComponent implements OnInit {
     this.dialogRef.close();
   }
   createFarm(){
-    this.farmsService.post(this.farmForm.value).subscribe(result => console.log(result));
+    this.farmsService.post(this.farmForm.value).subscribe(result => {});
     this.dialogRef.close();
     this.farmForm.reset();
     window.location.reload();
