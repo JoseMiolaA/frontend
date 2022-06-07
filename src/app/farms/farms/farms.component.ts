@@ -38,5 +38,17 @@ export class FarmsComponent implements OnInit {
   onAdd(){
     console.log('onAdd');
   }
+  onEdit(){
+    console.log('onEdit');
+  }
+
+  onFoward(){
+    console.log('onCreate');
+  }
+
+  onDelete(){
+    console.log('onDelete');
+  }
+
 
 }

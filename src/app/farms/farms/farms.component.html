@@ -41,13 +41,13 @@
 
       <mat-cell *matCellDef>
         <button mat-icon-button aria-label="Edit Farm">
-          <mat-icon>edit</mat-icon>
+          <mat-icon (click) = "onEdit()">edit</mat-icon>
         </button>
         <button mat-icon-button aria-label="Delete Farm">
-          <mat-icon>delete</mat-icon>
+          <mat-icon (click) = "onDelete()">delete</mat-icon>
         </button>
         <button mat-icon-button aria-label="Go to Plots">
-          <mat-icon>arrow_forward_ios</mat-icon>
+          <mat-icon (click) = "onFoward()">arrow_forward_ios</mat-icon>
         </button>
 
 
