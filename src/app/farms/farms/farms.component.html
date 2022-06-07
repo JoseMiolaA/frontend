@@ -39,23 +39,17 @@
         </button>
       </mat-header-cell>
 
-      <mat-cell *matCellDef>
+      <mat-cell *matCellDef="let farm">
         <button mat-icon-button aria-label="Edit Farm">
           <mat-icon (click) = "onEdit()">edit</mat-icon>
         </button>
         <button mat-icon-button aria-label="Delete Farm">
-          <mat-icon (click) = "onDelete()">delete</mat-icon>
+          <mat-icon (click) = "onDelete(farm)">delete</mat-icon>
         </button>
         <button mat-icon-button aria-label="Go to Plots">
           <mat-icon (click) = "onFoward()">arrow_forward_ios</mat-icon>
         </button>
-
-
       </mat-cell>
-
-
-
-
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

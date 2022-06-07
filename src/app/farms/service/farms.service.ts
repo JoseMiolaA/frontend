@@ -18,4 +18,9 @@ export class FarmsService {
   post(farm: Farm){
     return this.httpClient.post<Farm>(this.API, farm);
   }
+  delete(farm: Farm){
+    let newURL = this.API + '/id/' + farm.id;
+    return this.httpClient.delete<Farm>(newURL);
+  }
+
 }

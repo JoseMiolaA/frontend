@@ -7,6 +7,7 @@ import { SharedModule } from './../shared/shared.module';
 import { FarmFormComponent } from './farm-form/farm-form.component';
 import { FarmsRoutingModule } from './farms-routing.module';
 import { FarmsComponent } from './farms/farms.component';
+import { FarmEditFormComponent } from './farm-edit-form/farm-edit-form.component';
 
 
 
@@ -15,7 +16,8 @@ import { FarmsComponent } from './farms/farms.component';
 @NgModule({
   declarations: [
     FarmsComponent,
-    FarmFormComponent
+    FarmFormComponent,
+    FarmEditFormComponent
   ],
   imports: [
     CommonModule,

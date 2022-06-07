@@ -40,7 +40,7 @@ export class FarmsComponent implements OnInit {
     const dialogRef = this.dialog.open(FarmFormComponent, {
       width: '250px'
     });
-    dialogRef.afterClosed().subscribe(farm => { });
+    dialogRef.afterClosed().subscribe(farm => {});
   }
   onEdit(){
     console.log('onEdit');
@@ -50,8 +50,9 @@ export class FarmsComponent implements OnInit {
     console.log('onCreate');
   }
 
-  onDelete(){
-    console.log('onDelete');
+  onDelete(farm:Farm){
+    this.farmsService.delete(farm).subscribe(farm => {});
+    window.location.reload();
   }
 
 

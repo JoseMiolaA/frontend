@@ -35,5 +35,4 @@ export class FarmFormComponent implements OnInit {
     this.farmForm.reset();
     window.location.reload();
   }
-
 }
