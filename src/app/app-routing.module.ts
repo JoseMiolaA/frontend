@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: 'farms',
   loadChildren: () => import('./farms/farms.module').then(m => m.FarmsModule)
-}
+  }
 ];
 
 @NgModule({

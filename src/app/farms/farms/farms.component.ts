@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FarmEditFormComponent } from './../farm-edit-form/farm-edit-form.component';
 import { FarmFormComponent } from './../farm-form/farm-form.component';
 import { FarmsService } from './../service/farms.service';
@@ -17,7 +18,7 @@ export class FarmsComponent implements OnInit {
   farms: Observable<Farm[]>;
   displayedColumns = ['name', 'area', 'totalProduction', 'productivity', 'buttons']
 
-  constructor(private farmsService: FarmsService, public dialog: MatDialog) {
+  constructor(private farmsService: FarmsService, public dialog: MatDialog, private router: Router) {
     this.farms = this.farmsService.getAll()
     .pipe(
       catchError(error => {
@@ -50,8 +51,8 @@ export class FarmsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(farm => {console.log(farm)});  }
 
-  onFoward(){
-    console.log('onCreate');
+  onFoward(farm:Farm){
+    this.router.navigate(['farms/plots'], { queryParams: {id: farm.id}});
   }
 
   onDelete(farm:Farm){
