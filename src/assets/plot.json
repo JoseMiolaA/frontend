@@ -1,0 +1,18 @@
+{
+  "id": "627460a92fc32a314bc197fa",
+  "farmId": "629fb5fc3171635f821dee19",
+  "name": "Criado lokoo",
+  "area": 2.0,
+  "totalProduction": 70.0,
+  "productivity": 35.0,
+  "productions": [
+      {
+          "type": "Abobora",
+          "quantity": 20.0
+      },
+      {
+          "type": "Soja",
+          "quantity": 50.0
+      }
+  ]
+}
