@@ -30,7 +30,7 @@ export class FarmFormComponent implements OnInit {
     this.dialogRef.close();
   }
   createFarm(){
-    this.farmsService.post(this.farmForm.value).subscribe(result => {});
+    this.farmsService.create(this.farmForm.value).subscribe(result => {});
     this.dialogRef.close();
     this.farmForm.reset();
     window.location.reload();

@@ -15,7 +15,18 @@ export class FarmsService {
   getAll(){
     return this.httpClient.get<Farm[]>(this.API);
   }
-  post(farm: Farm){
+  getById(id:string){
+    let newURL = this.API + '/id/' + id;
+    return this.httpClient.get<Farm>(newURL);
+  }
+
+  create(farm: Farm){
+    const sender = {
+      name: farm.name
+    }
+    return this.httpClient.post<Farm>(this.API, sender);
+  }
+  edit(farm: Farm){
     return this.httpClient.post<Farm>(this.API, farm);
   }
   delete(farm: Farm){

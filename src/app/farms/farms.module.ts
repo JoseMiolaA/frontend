@@ -34,4 +34,6 @@ import { PlotsEditFormComponent } from './plots-edit-form/plots-edit-form.compon
     ReactiveFormsModule
   ]
 })
-export class FarmsModule { }
+export class FarmsModule {
+
+}

@@ -33,7 +33,7 @@ export class FarmEditFormComponent implements OnInit {
     this.dialogRef.close();
   }
   editFarm(){
-    this.farmsService.post(this.farmForm.value).subscribe(result => console.log(result));
+    this.farmsService.edit(this.farmForm.value).subscribe(result => console.log(result));
     this.dialogRef.close();
     this.farmForm.reset();
     window.location.reload();
