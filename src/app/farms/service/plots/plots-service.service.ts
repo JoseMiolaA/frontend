@@ -16,13 +16,20 @@ export class PlotsServiceService {
 
   }
   getByFarmId(farmId:string){
-    let newUrl = this.API + '/' + farmId;
-    return this.httpClient.get<Plot[]>(this.API);
+    let newUrl = this.API + '/farm_id/' + farmId;
+    console.log(farmId)
+    return this.httpClient.get<Plot[]>(newUrl);
   }
+
   create(plot:PlotDTO){
+    return this.httpClient.post<Plot>(this.API, plot);
+  }
+
+  edit(plot:PlotDTO){
     console.log(plot);
     return this.httpClient.post<Plot>(this.API, plot);
   }
+
   delete(plot: Plot){
     let newURL = this.API + '/id/' + plot.id;
     return this.httpClient.delete<Plot>(newURL);

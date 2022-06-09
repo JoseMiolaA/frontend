@@ -34,6 +34,9 @@ export class PlotsFormComponent implements OnInit {
   }
   createPlot(){
     //forma temporaria de enviar enquanto não ha adiçao separada de produçao
+    if(this.plotForm.valid &&
+      this.plotForm.controls['area'].value > 0 &&
+      this.plotForm.controls['productions'].value >= 0){
       const createdPlot: PlotDTO = {
       name:this.plotForm.controls['name'].value,
       farmId: this.plotForm.controls['farmId'].value,
@@ -48,7 +51,6 @@ export class PlotsFormComponent implements OnInit {
     this.dialogRef.close();
     this.plotForm.reset();
     window.location.reload();
+    }
   }
-
-
 }

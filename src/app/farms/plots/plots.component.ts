@@ -1,3 +1,4 @@
+import { PlotsEditFormComponent } from './../plots-edit-form/plots-edit-form.component';
 import { PlotsFormComponent } from './../plots-form/plots-form.component';
 import { PlotsServiceService } from './../service/plots/plots-service.service';
 import { Farm } from './../model/farm';
@@ -57,6 +58,11 @@ export class PlotsComponent implements OnInit {
 
   }
   onEdit(plot:Plot){
+    const dialogRef = this.dialog.open(PlotsEditFormComponent, {
+      width: '250px',
+      data: plot
+    });
+    dialogRef.afterClosed().subscribe(farm => {console.log(farm)});
 
   }
 
@@ -65,7 +71,8 @@ export class PlotsComponent implements OnInit {
   }
 
   onDelete(plot:Plot){
-
+    this.plotsService.delete(plot).subscribe(farm => {});
+    window.location.reload();
   }
 
 }

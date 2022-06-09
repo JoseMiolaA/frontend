@@ -14,7 +14,6 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
   styleUrls: ['./farms.component.css']
 })
 export class FarmsComponent implements OnInit {
-
   farms: Observable<Farm[]>;
   displayedColumns = ['name', 'area', 'totalProduction', 'productivity', 'buttons']
 
@@ -26,7 +25,6 @@ export class FarmsComponent implements OnInit {
         return of([])
       })
     );
-
    }
    openError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
