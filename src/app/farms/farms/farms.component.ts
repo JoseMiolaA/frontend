@@ -58,7 +58,6 @@ export class FarmsComponent implements OnInit {
     window.location.reload();
   }
   isValid(production:unknown){
-    console.log(production)
     if(production === "NaN")
       return '-';
     else
