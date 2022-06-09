@@ -49,7 +49,7 @@ export class PlotsComponent implements OnInit {
   }
   onAdd(){
     const dialogRef = this.dialog.open(PlotsFormComponent, {
-      width: '250px',
+      width: '400px',
       data:{
         farmId:this.farmId
       }
@@ -59,7 +59,7 @@ export class PlotsComponent implements OnInit {
   }
   onEdit(plot:Plot){
     const dialogRef = this.dialog.open(PlotsEditFormComponent, {
-      width: '250px',
+      width: '400px',
       data: plot
     });
     dialogRef.afterClosed().subscribe(farm => {console.log(farm)});
