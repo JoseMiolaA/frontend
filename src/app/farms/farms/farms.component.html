@@ -34,7 +34,7 @@
     <!-- Productivity Column -->
     <ng-container matColumnDef="productivity" class="cell">
       <th mat-header-cell *matHeaderCellDef> Produtividade </th>
-      <td mat-cell *matCellDef="let farm"> {{farm.productivity}} </td>
+      <td mat-cell *matCellDef="let farm">{{isValid(farm.productivity)}}</td>
     </ng-container>
 
     <!-- Buttons Column -->

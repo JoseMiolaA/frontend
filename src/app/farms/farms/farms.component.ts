@@ -57,6 +57,13 @@ export class FarmsComponent implements OnInit {
     this.farmsService.delete(farm).subscribe(farm => {});
     window.location.reload();
   }
+  isValid(production:unknown){
+    console.log(production)
+    if(production === "NaN")
+      return '-';
+    else
+      return production;
 
+  }
 
 }
