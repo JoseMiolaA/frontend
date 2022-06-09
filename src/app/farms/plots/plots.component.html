@@ -1,6 +1,9 @@
 <mat-card class="card">
   <mat-toolbar color="primary">
-   <span>Taliões de {{farmName}}</span>
+    <button mat-icon-button>
+      <mat-icon (click)="onBack()">arrow_back_ios</mat-icon>
+    </button>
+    <span>Taliões de {{farmName}}</span>
    <span class="spacer"></span>
   <button mat-mini-fab color="accent" aria-label="Add Farm">
     <mat-icon (click) = "onAdd()">add</mat-icon>

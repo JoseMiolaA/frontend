@@ -25,7 +25,8 @@ export class PlotsComponent implements OnInit {
   displayedColumns = ['name', 'area', 'totalProduction', 'productivity', 'buttons']
 
 
-  constructor(private route: ActivatedRoute,private plotsService: PlotsServiceService,private farmsService:FarmsService, public dialog: MatDialog) {
+  constructor(private route: ActivatedRoute,private plotsService: PlotsServiceService,private farmsService:FarmsService, public dialog: MatDialog,
+    private router: Router) {
       this.route.queryParams.subscribe(params => {
         this.farmId = params['id'];
     })
@@ -68,6 +69,10 @@ export class PlotsComponent implements OnInit {
 
   onFoward(plot:Plot){
 
+  }
+
+  onBack(){
+    this.router.navigate(['']);
   }
 
   onDelete(plot:Plot){
